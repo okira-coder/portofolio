@@ -1,26 +1,107 @@
 @import "tailwindcss";
 
+/*
+ * Design system : beige chaud, charbon, blanc cassé, orange brûlé.
+ * Équilibre visé : 80 % neutres, 15 % contraste (blocs charbon), 5 % orange.
+ * Trois tons de section : beige (défaut), .theme-paper, .theme-dark.
+ * --accent : aplats, lignes, boutons. --accent-ink : texte orange lisible (AA).
+ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #f3ebdd;
+  --panel: #fffdf8;
+  --raised: #fffdf8;
+  --line: #dcd0bd;
+  --text: #171512;
+  --muted: #5e554b;
+  --faint: #6f655a;
+  --accent: #d97745;
+  --accent-strong: #c4652f;
+  --accent-ink: #a84f1c;
+  --prod: #2f7d55;
+  --preprod: #a87a12;
+  --proto: #7a6f63;
+  --rnd: #5b6bb5;
+  --shade: rgb(23 21 18 / 0.12);
+  color-scheme: light;
+}
+
+.theme-paper {
+  --ink: #fffdf8;
+  --panel: #f6efe3;
+  --raised: #fbf7f0;
+  --line: #e3d9c9;
+}
+
+.theme-dark {
+  --ink: #171512;
+  --panel: #211e1a;
+  --raised: #2a2621;
+  --line: #3a342d;
+  --text: #fffdf8;
+  --muted: #b5aa9c;
+  --faint: #9a8f81;
+  --accent: #f08a4b;
+  --accent-strong: #f5a06b;
+  --accent-ink: #f08a4b;
+  --prod: #5bc48a;
+  --preprod: #e5b04a;
+  --proto: #9a8f81;
+  --rnd: #9aa6e8;
+  --shade: rgb(0 0 0 / 0.45);
+  color-scheme: dark;
+}
+
+/* Le fond et la couleur de texte suivent le ton de la section. */
+.theme-paper,
+.theme-dark {
+  background-color: var(--ink);
+  color: var(--text);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-ink: var(--ink);
+  --color-panel: var(--panel);
+  --color-raised: var(--raised);
+  --color-line: var(--line);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-ink: var(--accent-ink);
+  --color-prod: var(--prod);
+  --color-preprod: var(--preprod);
+  --color-proto: var(--proto);
+  --color-rnd: var(--rnd);
+  --color-shade: var(--shade);
+  --font-sans: var(--font-schibsted);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--text);
+  font-family: var(--font-schibsted), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

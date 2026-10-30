@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Franck ARIKO
 
-## Getting Started
-
-First, run the development server:
+Next.js 16 (App Router), TypeScript, Tailwind CSS 4, Motion, Lucide.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # build de production
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Modifier le contenu
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Tout le texte est dans `data/`, l’UI n’a pas besoin d’être touchée :
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `data/site.ts` : identité, liens, chiffres d’impact
+- `data/home.ts` : textes courts de la homepage (hero, 4 projets, parcours)
+- `data/projects.ts` : les 4 projets principaux, leurs études de cas, les Labs
+- `data/experience.ts` : expériences
+- `data/skills.ts` : compétences, méthode, gestion de projet, ateliers, À propos
 
-## Learn More
+Une section d’étude de cas encore inconnue s’écrit `todo("…")` : elle s’affiche en placeholder.
+Ajouter un projet = ajouter une entrée dans `projects` ; la page `/projects/<slug>` et le sitemap suivent.
 
-To learn more about Next.js, take a look at the following resources:
+## Images
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Déposer les captures dans `public/images/` avec le nom attendu
+(liste dans `public/images/README.md`). Tant qu’un fichier manque, un placeholder
+indiquant le chemin attendu s’affiche.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Variables d’environnement
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Variable | Rôle |
+|---|---|
+| `NEXT_PUBLIC_SITE_URL` | URL publique (SEO, sitemap, OpenGraph) |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | Adresse du bouton « Me contacter » |
