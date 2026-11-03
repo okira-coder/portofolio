@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Suspense, type ReactNode } from "react";
 import { CaseSectionView } from "@/components/project/CaseSectionView";
 import { Container } from "@/components/ui/Container";
+import { imageExists } from "@/components/ui/Media";
 import { ProjectImage } from "@/components/ui/ProjectImage";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { getProject, projects, type CaseSection } from "@/data/projects";
@@ -63,7 +64,8 @@ async function CaseStudy({ params }: { params: PageProps<"/projects/[slug]">["pa
   const cs = project.caseStudy;
   const index = projects.indexOf(project);
   const next = projects[(index + 1) % projects.length];
-  const [firstImage, ...otherImages] = cs.images;
+  // Seuls les visuels réellement présents sont affichés : pas de placeholder.
+  const [firstImage, ...otherImages] = cs.images.filter((img) => imageExists(img.src));
 
   // Les blocs non renseignés (kind "todo") ne sont pas affichés.
   const done = (section: CaseSection) => section.kind !== "todo";
