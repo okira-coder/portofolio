@@ -1,4 +1,5 @@
 import { Reveal, RevealItem } from "@/components/motion/Reveal";
+import { Media } from "@/components/ui/Media";
 import { Section } from "@/components/ui/Section";
 import { journey } from "@/data/home";
 import { about } from "@/data/skills";
@@ -32,6 +33,15 @@ export function About() {
           {about.paragraphs.map((p) => (
             <p key={p}>{p}</p>
           ))}
+          <figure className="!mt-10 text-base">
+            <Media
+              slot={about.github}
+              frame="browser"
+              label="github.com/okira-coder"
+              sizes="(min-width: 1024px) 55vw, 100vw"
+            />
+            <figcaption className="mt-3 text-sm text-muted">{about.github.caption}</figcaption>
+          </figure>
         </Reveal>
         <div className="space-y-10 lg:col-span-4 lg:col-start-9">
           <div>

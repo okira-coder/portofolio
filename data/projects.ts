@@ -72,7 +72,7 @@ export const projects: Project[] = [
     result:
       "Détection d’anomalies sur 877 fontaines : 8 / 8 dernières pannes détectées, jusqu’à 16 jours d’anticipation observés, pipeline quotidien en moins d’une minute.",
     role: "Cadrage, data science, industrialisation du pipeline et suivi terrain",
-    stack: ["Python", "PostgreSQL", "One-Class SVM", "PCA", "Slack"],
+    stack: ["Python", "Docker", "PostgreSQL", "One-Class SVM", "PCA", "Slack"],
     status: "Pré-production",
     statusDetail: "Pré-production / validation terrain avancée",
     cover: {
@@ -132,7 +132,7 @@ export const projects: Project[] = [
           "Persistance",
           "Slack",
         ],
-        note: "Modèle retenu : RobustScaler → PCA(5) → One-Class SVM, suivi d’un moteur de diagnostic à règles métier.",
+        note: "Modèle retenu : RobustScaler → PCA(5) → One-Class SVM, suivi d’un moteur de diagnostic à règles métier. L’ensemble du pipeline (extraction, modèle, diagnostic, alerting) est conteneurisé avec Docker.",
       },
       personal: {
         kind: "list",
@@ -140,6 +140,7 @@ export const projects: Project[] = [
           "Cadrage du besoin avec le SAV et l’équipe industrielle.",
           "Analyse des données et benchmark des modèles, choix du One-Class SVM.",
           "Conception et développement du pipeline, de l’extraction à l’alerte Slack.",
+          "Conteneurisation de l’ensemble du pipeline avec Docker.",
           "Optimisation de la restauration PostgreSQL.",
           "Suivi des faux positifs et recalibrage des règles de diagnostic.",
           "Rédaction du cahier des charges et modélisation économique (ROI).",
@@ -672,6 +673,99 @@ export const projects: Project[] = [
           height: 900,
           alt: "Page d’un workflow : synthèse de réunion avec decision log",
           caption: "Un workflow du catalogue : synthèse de réunion avec decision log",
+        },
+      ],
+    },
+  },
+  {
+    slug: "cashup",
+    number: "07",
+    name: "TECH-UP Reprise (CashUp)",
+    category: "Produit web · CRM · Règles métier",
+    title: "Estimer le prix d’un iPhone en 2 minutes, et suivre chaque lead",
+    problem:
+      "Racheter des smartphones demande de chiffrer vite et de façon cohérente, puis de ne perdre aucune demande. Il fallait un estimateur de prix fiable et un suivi des leads.",
+    result:
+      "Un site de rachat de smartphones avec estimation en ligne, adossé à un CRM de suivi des leads et à des règles de calcul déterministes pour chiffrer les iPhone.",
+    role: "Mise en place du CRM de suivi des leads et des règles de calcul de prix",
+    stack: ["CRM", "Règles de calcul déterministes", "Web"],
+    status: "Production",
+    statusDetail: "En ligne",
+    link: { label: "Voir cashupstore.fr", href: "https://cashupstore.fr/" },
+    cover: {
+      src: "/images/projects/cashup/home.png",
+      width: 1440,
+      height: 900,
+      alt: "Accueil du site de rachat de smartphones TECH-UP Reprise",
+    },
+    caseStudy: {
+      period: "À préciser",
+      role: "Mise en place du CRM de suivi des leads et des règles de calcul de prix",
+      problem: {
+        kind: "text",
+        paragraphs: [
+          "TECH-UP Store rachète des smartphones, même cassés, partout en France. Le client décrit son téléphone (modèle, capacité, état) et reçoit une estimation gratuite en 2 minutes, sans engagement.",
+          "Deux besoins : donner un prix cohérent et immédiat, et suivre chaque demande jusqu’à la reprise pour ne perdre aucun lead.",
+        ],
+      },
+      users: {
+        kind: "list",
+        items: [
+          "Les particuliers qui revendent leur smartphone.",
+          "L’équipe TECH-UP, qui suit les demandes et organise les remises en boutique ou par expédition.",
+        ],
+      },
+      constraints: {
+        kind: "list",
+        items: [
+          "Un prix qui doit rester explicable : le même appareil dans le même état donne toujours la même estimation.",
+          "Des appareils parfois cassés, donc des états à décrire simplement.",
+        ],
+      },
+      approach: todo("À compléter : déroulé de la mission, de la conception à la mise en ligne."),
+      architecture: {
+        kind: "pipeline",
+        steps: ["Formulaire d’estimation", "Règles de calcul", "Prix", "CRM", "Suivi du lead"],
+        note: "Le détail de la stack technique est à préciser.",
+      },
+      personal: {
+        kind: "list",
+        items: [
+          "Mise en place d’un CRM pour le suivi des leads.",
+          "Définition de règles de calcul déterministes pour estimer le prix d’un iPhone.",
+        ],
+      },
+      results: {
+        kind: "metrics",
+        note: "Chiffres de TECH-UP affichés sur le site au moment de la capture, pas des résultats attribués à ma seule contribution.",
+        metrics: [
+          { value: "500+", label: "reprises effectuées (affiché sur le site)" },
+          { value: "4,6 / 5", label: "note Trustpilot, 87 avis (affiché sur le site)" },
+          { value: "2 min", label: "pour obtenir une estimation" },
+        ],
+      },
+      failures: todo("À compléter : principale difficulté rencontrée."),
+      changes: todo("À compléter : ce qui a été ajusté après les premiers retours."),
+      learnings: {
+        kind: "list",
+        items: [
+          "Des règles déterministes donnent des prix explicables et reproductibles, là où un modèle opaque serait difficile à défendre face au client.",
+        ],
+      },
+      images: [
+        {
+          src: "/images/projects/cashup/home.png",
+          width: 1440,
+          height: 900,
+          alt: "Accueil du site TECH-UP Reprise",
+          caption: "Accueil : « Revendez votre smartphone. Même cassé. »",
+        },
+        {
+          src: "/images/projects/cashup/estimation.png",
+          width: 1440,
+          height: 900,
+          alt: "Parcours d’estimation du prix d’un smartphone",
+          caption: "Parcours d’estimation du prix",
         },
       ],
     },

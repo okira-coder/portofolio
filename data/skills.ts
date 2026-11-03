@@ -12,7 +12,7 @@ export const skillGroups = [
   },
   {
     name: "Engineering",
-    items: ["Python", "Node.js", "SQL", "REST APIs & webhooks", "PostgreSQL", "Docker", "CI/CD", "Authentification", "Power BI"],
+    items: ["Python", "Node.js", "SQL", "REST APIs & webhooks", "PostgreSQL", "Docker", "Conteneurisation", "CI/CD", "Authentification", "Power BI"],
   },
   {
     name: "Intégrations & plateformes",
@@ -65,6 +65,13 @@ export const about = {
     "J’ai commencé par écrire du code. Puis, à force de travailler avec les équipes métier, je me suis intéressé à ce qui se passe avant et après : quel problème mérite d’être résolu, comment le mesurer, comment faire adopter la solution.",
     "Aujourd’hui je fais les deux : je cadre et je pilote, mais je construis aussi les prototypes moi-même et je les accompagne jusqu’à la production, chez Castalie comme en freelance.",
   ],
+  github: {
+    src: "/images/about/github-profile.png",
+    alt: "Profil GitHub okira-coder : 68 dépôts et des contributions chaque année depuis 2022",
+    width: 2880,
+    height: 1510,
+    caption: "Profil GitHub : 68 dépôts et des contributions année après année depuis 2022, bien avant l’arrivée de l’IA générative dans mon quotidien.",
+  },
   education: [
     { title: "Manager de la Transformation Digitale, Data et IA", detail: "Mastère Chef de projet IA, titre certifié niveau 7 · ISCOD Paris" },
     { title: "Licence Informatique, spécialisation IA", detail: "Aix-Marseille Université · 2020 – 2023" },
