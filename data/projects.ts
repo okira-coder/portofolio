@@ -53,6 +53,8 @@ export type Project = {
   status: Status;
   statusDetail: string;
   cover: ImageSlot;
+  /** Site ou application en ligne. */
+  link?: { label: string; href: string };
   caseStudy: CaseStudy;
 };
 
@@ -502,6 +504,178 @@ export const projects: Project[] = [
       ],
     },
   },
+  {
+    slug: "onbump",
+    number: "05",
+    name: "OnBump",
+    category: "Produit · Mobile & Web · Networking",
+    title: "Trouver les bons événements et rencontrer les bonnes personnes",
+    problem:
+      "Un événement dure quelques heures, mais les rencontres qu’il permet se perdent souvent après coup. OnBump aide à choisir où aller, qui rencontrer, et à relancer au bon moment.",
+    result:
+      "Application mobile iPhone et site web en ligne sur onbump.net : plus d’une centaine d’événements recensés et plus de 2 500 visiteurs web.",
+    role: "Conception et développement de l’application mobile et du site web",
+    stack: ["Application mobile", "Web", "iOS"],
+    status: "Production",
+    statusDetail: "En ligne : iPhone et web",
+    link: { label: "Voir onbump.net", href: "https://onbump.net" },
+    cover: {
+      src: "/images/projects/onbump/home.png",
+      width: 1440,
+      height: 900,
+      alt: "Accueil du site onbump.net",
+    },
+    caseStudy: {
+      period: "2026",
+      role: "Conception et développement — application mobile et site web",
+      problem: {
+        kind: "text",
+        paragraphs: [
+          "Les événements professionnels réunissent beaucoup de monde, mais on repart souvent sans savoir qui était vraiment pertinent à rencontrer, ni comment relancer ensuite.",
+          "OnBump se positionne avant, pendant et après l’événement : trouver où aller, savoir qui rencontrer, échanger en une seconde et relancer au bon moment.",
+        ],
+      },
+      users: {
+        kind: "list",
+        items: [
+          "Les networkers, qui cherchent où aller et qui rencontrer.",
+          "Les organisateurs, qui veulent faire découvrir leur événement.",
+        ],
+      },
+      constraints: todo("À compléter : contraintes techniques et produit (plateformes, données, délais)."),
+      approach: todo("À compléter : déroulé du projet, de la conception à la mise en ligne."),
+      architecture: {
+        kind: "pipeline",
+        steps: ["Application mobile", "Site web", "Événements", "Rencontres", "Relances"],
+        note: "Le détail de la stack technique est à préciser.",
+      },
+      personal: {
+        kind: "list",
+        items: [
+          "Application mobile iPhone et site web onbump.net.",
+          "Parcours côté networkers : découvrir les événements, repérer les personnes à rencontrer.",
+          "Parcours côté organisateurs : faire découvrir son événement.",
+        ],
+      },
+      results: {
+        kind: "metrics",
+        metrics: [
+          { value: "100+", label: "événements recensés" },
+          { value: "2 500+", label: "visiteurs web" },
+          { value: "iOS + web", label: "application iPhone et site web" },
+        ],
+      },
+      failures: todo("À compléter : principale difficulté rencontrée."),
+      changes: todo("À compléter : ce qui a été ajusté après les premiers retours."),
+      learnings: todo("À compléter : enseignements du projet."),
+      images: [
+        {
+          src: "/images/projects/onbump/home.png",
+          width: 1440,
+          height: 900,
+          alt: "Accueil de onbump.net",
+          caption: "Accueil : « Les bonnes rencontres commencent avant l’événement »",
+        },
+        {
+          src: "/images/projects/onbump/networkers.png",
+          width: 1440,
+          height: 900,
+          alt: "Page networkers de onbump.net",
+          caption: "Page networkers : trouver où aller et qui rencontrer",
+        },
+        {
+          src: "/images/projects/onbump/organisateurs.png",
+          width: 1440,
+          height: 900,
+          alt: "Page organisateurs de onbump.net",
+          caption: "Page organisateurs : faire découvrir son événement",
+        },
+      ],
+    },
+  },
+  {
+    slug: "opsbyfranck",
+    number: "06",
+    name: "Claude Ops by Franck",
+    category: "Produit · IA générative · B2B",
+    title: "Des workflows IA pour gagner du temps et structurer les équipes",
+    problem:
+      "Les équipes B2B perdent des heures sur des tâches répétitives (synthèses, prospection, RH, SEO). Claude Ops propose des workflows IA testés, qui donnent un résultat concret en moins de 2 minutes.",
+    result:
+      "Un catalogue de 20 workflows en ligne sur opsbyfranck.com, par métier : SEO & Marketing, Vente, RH, Management & Ops.",
+    role: "Conception, création des workflows et développement du site",
+    stack: ["Claude", "Artifacts", "Slack", "Notion", "CRM"],
+    status: "Production",
+    statusDetail: "En ligne",
+    link: { label: "Voir opsbyfranck.com", href: "https://opsbyfranck.com" },
+    cover: {
+      src: "/images/projects/opsbyfranck/home.png",
+      width: 1440,
+      height: 900,
+      alt: "Accueil du site opsbyfranck.com",
+    },
+    caseStudy: {
+      period: "2026",
+      role: "Fondateur — conception, workflows et développement",
+      problem: {
+        kind: "text",
+        paragraphs: [
+          "Chaque workflow répond à une douleur business précise : vous le testez, vous mesurez le résultat, et si ça marche, il est intégré aux outils internes (Slack, Notion, CRM) pour que toute l’équipe en profite.",
+        ],
+      },
+      users: {
+        kind: "list",
+        items: ["Des professionnels et équipes B2B : SEO & marketing, vente, RH, management et opérations."],
+      },
+      constraints: todo("À compléter : contraintes (qualité des sorties, confidentialité, adoption)."),
+      approach: {
+        kind: "pipeline",
+        steps: ["Identifier la douleur", "Vivre le résultat", "Ajuster au contexte", "Industrialiser"],
+        note: "La méthode affichée sur le site : un résultat en moins de 2 minutes, puis intégration dans les outils internes.",
+      },
+      architecture: {
+        kind: "pipeline",
+        steps: ["Catalogue de workflows", "Prompt autonome", "Artifact Claude", "Outils internes"],
+        note: "Le détail de la stack technique du site est à préciser.",
+      },
+      personal: {
+        kind: "list",
+        items: [
+          "Conception du produit et du catalogue de 20 workflows, testés avant publication.",
+          "Site opsbyfranck.com : catalogue par métier, boîte à idées, veille par domaine.",
+          "Offre d’accompagnement et prise de rendez-vous pour les audits.",
+        ],
+      },
+      results: {
+        kind: "metrics",
+        note: "Chiffres affichés sur opsbyfranck.com au moment de la capture.",
+        metrics: [
+          { value: "20", label: "workflows au catalogue" },
+          { value: "4", label: "domaines métier" },
+          { value: "< 2 min", label: "pour obtenir un résultat concret" },
+        ],
+      },
+      failures: todo("À compléter : principale difficulté rencontrée."),
+      changes: todo("À compléter : ce qui a été ajusté après les premiers retours."),
+      learnings: todo("À compléter : enseignements du projet."),
+      images: [
+        {
+          src: "/images/projects/opsbyfranck/home.png",
+          width: 1440,
+          height: 900,
+          alt: "Accueil de opsbyfranck.com",
+          caption: "Accueil : des workflows IA pour gagner du temps et mieux convertir",
+        },
+        {
+          src: "/images/projects/opsbyfranck/workflow.png",
+          width: 1440,
+          height: 900,
+          alt: "Page d’un workflow : synthèse de réunion avec decision log",
+          caption: "Un workflow du catalogue : synthèse de réunion avec decision log",
+        },
+      ],
+    },
+  },
 ];
 
 export type Lab = {
@@ -520,24 +694,6 @@ export type Lab = {
 };
 
 export const labs: Lab[] = [
-  {
-    name: "ViralHit",
-    category: "Computer Vision · Mobile · Live",
-    summary:
-      "Fondateur solo : une application gratuite qui compte les répétitions sportives avec la caméra du téléphone.",
-    details: [
-      "Comptage de répétitions, défis sportifs, sessions live",
-      "React Native, Supabase, LiveKit, modèle de pose Google",
-    ],
-    status: "MVP",
-    statusDetail: "MVP fonctionnel, pas encore lancé",
-    image: {
-      src: "/images/projects/viralhit/app.png",
-      width: 1170,
-      height: 2532,
-      alt: "Écran ViralHit : caméra et squelette de pose",
-    },
-  },
   {
     name: "Trader Lab",
     category: "Quant Research · Trading Systems · R&D",

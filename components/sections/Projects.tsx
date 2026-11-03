@@ -5,6 +5,7 @@ import { toneClass, type Tone } from "@/components/ui/Section";
 import { IotFeature } from "./featured/IotFeature";
 import { McpFeature } from "./featured/McpFeature";
 import { PredictiveFeature } from "./featured/PredictiveFeature";
+import { SiteFeature } from "./featured/SiteFeature";
 import { WodFeature } from "./featured/WodFeature";
 
 /** Bande pleine largeur : chaque projet a son ton de fond. */
@@ -16,7 +17,7 @@ function Band({ tone, children, divider = false }: { tone: Tone; children: React
   );
 }
 
-/** Les quatre projets principaux, chacun avec sa propre mise en scène. */
+/** Les projets principaux, chacun avec sa propre mise en scène. */
 export function Projects() {
   return (
     <section id="projets" aria-labelledby="projets-titre" className="overflow-x-clip">
@@ -46,6 +47,12 @@ export function Projects() {
       </Band>
       <Band tone="paper">
         <WodFeature />
+      </Band>
+      <Band tone="dark">
+        <SiteFeature slug="onbump" />
+      </Band>
+      <Band tone="beige">
+        <SiteFeature slug="opsbyfranck" reverse />
       </Band>
     </section>
   );

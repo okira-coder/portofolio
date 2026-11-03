@@ -39,3 +39,21 @@ export function CaseLink({ slug }: { slug: string }) {
     </Link>
   );
 }
+
+/** Lien externe vers le site ou l’application en ligne. */
+export function SiteLink({ href, label }: { href: string; label: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group inline-flex items-center gap-1.5 font-medium text-accent-ink transition-colors hover:text-text"
+    >
+      {label}
+      <ArrowUpRight
+        aria-hidden
+        className="size-4 transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+      />
+    </a>
+  );
+}

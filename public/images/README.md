@@ -16,7 +16,6 @@ série et données sensibles avant d'ajouter une capture.
 | projects/monsieurwod/wod.png | Accueil / WOD recommandé ✅ | 1170 × 2532 |
 | projects/monsieurwod/feed.png | Feed social, autres utilisateurs floutés ✅ | 1170 × 2532 |
 | projects/monsieurwod/wods.png | Catalogue de WODs ✅ | 1170 × 2532 |
-| projects/viralhit/app.png | Caméra + squelette de pose | 1170 × 2532 |
 | projects/traderlab/dashboard.png | Courbe de stratégie, terminal ou journal | 1600 × 1000 |
 | projects/goutte/dashboard.png | Interface Streamlit | 1600 × 1000 |
 | projects/ordonnance/app.png | UI patient / pharmacien | 1600 × 1000 |

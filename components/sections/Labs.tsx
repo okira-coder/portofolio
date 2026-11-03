@@ -5,14 +5,6 @@ import { Section } from "@/components/ui/Section";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { labs, type Lab } from "@/data/projects";
 
-// Place de chaque carte dans la grille (desktop) : ViralHit en grande carte verticale.
-const layout = [
-  "lg:row-span-2",
-  "lg:col-span-2",
-  "",
-  "",
-];
-
 export function Labs() {
   return (
     <Section
@@ -20,10 +12,10 @@ export function Labs() {
       title="Labs"
       intro="Des projets personnels où j’explore de nouvelles architectures, produits et usages de l’IA."
     >
-      <Reveal as="ul" stagger={0.1} className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-[auto_auto]">
-        {labs.map((lab, i) => (
-          <RevealItem as="li" key={lab.name} className={layout[i]}>
-            <LabCard lab={lab} tall={i === 0} />
+      <Reveal as="ul" stagger={0.1} className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        {labs.map((lab) => (
+          <RevealItem as="li" key={lab.name}>
+            <LabCard lab={lab} />
           </RevealItem>
         ))}
       </Reveal>
@@ -31,7 +23,7 @@ export function Labs() {
   );
 }
 
-function LabCard({ lab, tall }: { lab: Lab; tall: boolean }) {
+function LabCard({ lab }: { lab: Lab }) {
   const isPhone = lab.image.height > lab.image.width;
   return (
     <article className="group flex h-full flex-col overflow-hidden rounded-2xl border border-line bg-panel/40 transition-colors duration-200 hover:border-faint">
@@ -44,9 +36,7 @@ function LabCard({ lab, tall }: { lab: Lab; tall: boolean }) {
           <Media
             slot={lab.image}
             frame="phone"
-            className={`w-[62%] max-w-[15rem] transition-transform duration-500 ease-out group-hover:-translate-y-1.5 ${
-              tall ? "" : "lg:w-[48%]"
-            }`}
+            className="w-[62%] max-w-[15rem] transition-transform duration-500 ease-out group-hover:-translate-y-1.5 lg:w-[48%]"
             sizes="15rem"
           />
         ) : (

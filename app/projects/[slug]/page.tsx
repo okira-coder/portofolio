@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Suspense, type ReactNode } from "react";
 import { CaseSectionView } from "@/components/project/CaseSectionView";
 import { Container } from "@/components/ui/Container";
@@ -88,6 +88,17 @@ async function CaseStudy({ params }: { params: PageProps<"/projects/[slug]">["pa
           <h1 className="mt-2 max-w-4xl text-[clamp(2.2rem,5vw,4rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
             {project.title}
           </h1>
+          {project.link && (
+            <a
+              href={project.link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 font-medium transition-colors hover:border-accent hover:text-accent-ink"
+            >
+              {project.link.label}
+              <ArrowUpRight aria-hidden className="size-4" />
+            </a>
+          )}
           <dl className="mt-10 grid gap-6 border-t border-line pt-6 text-sm sm:grid-cols-3">
             <div>
               <dt className="text-faint">Période</dt>

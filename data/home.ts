@@ -8,8 +8,8 @@ export const hero = {
   portrait: {
     src: "/images/franck-portrait.jpg",
     alt: "Portrait de Franck ARIKO",
-    width: 1200,
-    height: 1500,
+    width: 1118,
+    height: 1407,
   } satisfies ImageSlot,
   iotPreview: {
     src: "/images/projects/iot/dashboard.png",
