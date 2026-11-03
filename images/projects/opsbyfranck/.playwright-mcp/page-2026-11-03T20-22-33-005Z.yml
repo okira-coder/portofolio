@@ -1,0 +1,31 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]:
+      - generic [ref=e4]:
+        - link "Claude Ops by Franck — accueil" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - generic [ref=e9]:
+            - generic [ref=e10]: Claude Ops
+            - generic [ref=e11]: by Franck
+        - link "← Retour au catalogue" [ref=e12] [cursor=pointer]:
+          - /url: /
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - heading "Entrez votre email" [level=1] [ref=e20]
+          - paragraph [ref=e21]: Connexion sans mot de passe. Nous envoyons un code à usage unique.
+        - generic [ref=e22]:
+          - generic [ref=e23]:
+            - text: Email professionnel
+            - textbox "Email professionnel" [ref=e24]:
+              - /placeholder: prenom@domaine.com
+          - paragraph [ref=e33]: L'envoi de l'e-mail a échoué. Réessayez dans un instant.
+          - button "Recevoir mon code" [ref=e25]
+          - paragraph [ref=e28]: En continuant, vous acceptez de recevoir des emails concernant vos workflows. Aucun spam — désabonnement en 1 clic.
+      - paragraph [ref=e29]:
+        - text: Déjà un compte ? Entrez simplement votre email ci-dessus — même flux pour la connexion.
+        - generic [ref=e30]:
+          - text: Conçu par
+          - link "Franck Ariko" [ref=e31] [cursor=pointer]:
+            - /url: https://www.linkedin.com/in/franck-ariko-9a7480208/
+          - text: .
+  - alert [ref=e32]
