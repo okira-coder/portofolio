@@ -77,14 +77,14 @@ export const experiences: Experience[] = [
       },
       {
         title: "Terolia — GEO, visibilité dans les réponses des IA",
-        text: "Produit B2B réalisé de A à Z jusqu’au déploiement. Il mesure si une marque est citée par ChatGPT, Claude, Perplexity et Gemini, la compare à ses concurrents et propose un plan d’action priorisé. Frontend React, backend Python FastAPI, scraping, RAG, base Supabase (PostgreSQL + pgvector), hébergement Railway avec tâches planifiées. Utilisé par environ 5 professionnels, dont Castalie.",
+        text: "Produit B2B réalisé de A à Z jusqu’au déploiement. Il mesure si une marque est citée par ChatGPT, Claude, Perplexity et Gemini, la compare à ses concurrents et propose un plan d’action priorisé. Frontend Next.js (React), backend Python FastAPI, scraping, RAG, base Supabase (PostgreSQL + pgvector), hébergement Railway avec tâches planifiées. Utilisé par environ 5 professionnels, dont Castalie.",
       },
       {
         title: "TECH-UP Reprise — retail, rachat de smartphones",
         text: "Mise en place d’un CRM pour le suivi des leads et de règles de calcul déterministes pour estimer le prix d’un iPhone, en ligne sur cashupstore.fr.",
       },
     ],
-    tools: ["Node.js", "React", "Python", "FastAPI", "Supabase", "PostgreSQL", "pgvector", "RAG", "Scraping", "Railway"],
+    tools: ["Node.js", "Next.js", "React", "Python", "FastAPI", "Supabase", "PostgreSQL", "pgvector", "RAG", "Scraping", "Railway"],
     links: [
       { label: "Étude de cas MonsieurWod", href: "/projects/monsieurwod" },
       { label: "Étude de cas Terolia", href: "/projects/terolia" },

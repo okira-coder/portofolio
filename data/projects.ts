@@ -778,7 +778,7 @@ export const projects: Project[] = [
     result:
       "Un produit en ligne : audit de visibilité sur 4 moteurs IA, comparaison aux concurrents et plan d’action priorisé. Utilisé par environ 5 professionnels, dont Castalie.",
     role: "Conception et développement de A à Z jusqu’au déploiement",
-    stack: ["React", "Python", "FastAPI", "Scraping", "RAG", "Supabase", "PostgreSQL", "pgvector", "Railway"],
+    stack: ["Next.js", "React", "Python", "FastAPI", "Scraping", "RAG", "Supabase", "PostgreSQL", "pgvector", "Railway"],
     status: "Production",
     statusDetail: "En ligne",
     link: { label: "Voir terolia.com", href: "https://terolia.com" },
@@ -815,7 +815,7 @@ export const projects: Project[] = [
         kind: "list",
         intro: "Stack technique :",
         items: [
-          "Frontend : React.",
+          "Frontend : Next.js (React).",
           "Backend : Python avec FastAPI.",
           "Collecte de données : scraping.",
           "IA : RAG (retrieval-augmented generation).",
