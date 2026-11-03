@@ -65,12 +65,14 @@ async function CaseStudy({ params }: { params: PageProps<"/projects/[slug]">["pa
   const next = projects[(index + 1) % projects.length];
   const [firstImage, ...otherImages] = cs.images;
 
+  // Les blocs non renseignés (kind "todo") ne sont pas affichés.
+  const done = (section: CaseSection) => section.kind !== "todo";
   const sections: { id: string; title: string; section: CaseSection }[] = [
     { id: "probleme", title: "Le problème", section: cs.problem },
     { id: "utilisateurs", title: "Les utilisateurs", section: cs.users },
     { id: "contraintes", title: "Contraintes", section: cs.constraints },
     { id: "demarche", title: "Ma démarche", section: cs.approach },
-  ];
+  ].filter((x) => done(x.section));
 
   return (
     <article>
@@ -125,14 +127,22 @@ async function CaseStudy({ params }: { params: PageProps<"/projects/[slug]">["pa
           </Block>
         ))}
 
-        <Block id="architecture" title="Architecture">
-          <CaseSectionView section={cs.architecture} />
-          {firstImage && (
-            <div className="mt-8">
+        {done(cs.architecture) ? (
+          <Block id="architecture" title="Architecture">
+            <CaseSectionView section={cs.architecture} />
+            {firstImage && (
+              <div className="mt-8">
+                <ProjectImage slot={firstImage} priority />
+              </div>
+            )}
+          </Block>
+        ) : (
+          firstImage && (
+            <Block id="apercu" title="Aperçu">
               <ProjectImage slot={firstImage} priority />
-            </div>
-          )}
-        </Block>
+            </Block>
+          )
+        )}
 
         <Block id="realise" title="Ce que j’ai personnellement réalisé">
           <CaseSectionView section={cs.personal} />
@@ -150,38 +160,52 @@ async function CaseStudy({ params }: { params: PageProps<"/projects/[slug]">["pa
         </Block>
 
         {/* Le passage le plus important : ce qui n’a pas marché, et la réponse. */}
-        <section aria-labelledby="echecs" className="border-t border-line py-12">
-          <div className="grid gap-px overflow-hidden rounded-xl border border-line bg-line md:grid-cols-2">
-            <div className="border-l-2 border-l-preprod bg-panel p-6 sm:p-8">
-              <h2 id="echecs" className="text-lg font-semibold tracking-tight">
-                Ce qui n’a pas marché
-              </h2>
-              <div className="mt-5">
-                <CaseSectionView section={cs.failures} />
+        {(done(cs.failures) || done(cs.changes) || cs.aside) && (
+          <section aria-labelledby="echecs" className="border-t border-line py-12">
+            {(done(cs.failures) || done(cs.changes)) && (
+              <div
+                className={`grid gap-px overflow-hidden rounded-xl border border-line bg-line ${
+                  done(cs.failures) && done(cs.changes) ? "md:grid-cols-2" : ""
+                }`}
+              >
+                {done(cs.failures) && (
+                  <div className="border-l-2 border-l-preprod bg-panel p-6 sm:p-8">
+                    <h2 id="echecs" className="text-lg font-semibold tracking-tight">
+                      Ce qui n’a pas marché
+                    </h2>
+                    <div className="mt-5">
+                      <CaseSectionView section={cs.failures} />
+                    </div>
+                  </div>
+                )}
+                {done(cs.changes) && (
+                  <div className="bg-panel p-6 sm:p-8">
+                    <h2 className="text-lg font-semibold tracking-tight">Ce que j’ai changé</h2>
+                    <div className="mt-5">
+                      <CaseSectionView section={cs.changes} />
+                    </div>
+                  </div>
+                )}
               </div>
-            </div>
-            <div className="bg-panel p-6 sm:p-8">
-              <h2 className="text-lg font-semibold tracking-tight">Ce que j’ai changé</h2>
-              <div className="mt-5">
-                <CaseSectionView section={cs.changes} />
-              </div>
-            </div>
-          </div>
-          {cs.aside && (
-            <aside className="mt-6 rounded-xl border border-line p-6 sm:p-8">
-              <h3 className="font-semibold">{cs.aside.title}</h3>
-              <div className="mt-3 max-w-3xl space-y-3 leading-relaxed text-muted">
-                {cs.aside.paragraphs.map((p) => (
-                  <p key={p}>{p}</p>
-                ))}
-              </div>
-            </aside>
-          )}
-        </section>
+            )}
+            {cs.aside && (
+              <aside className="mt-6 rounded-xl border border-line p-6 sm:p-8">
+                <h3 className="font-semibold">{cs.aside.title}</h3>
+                <div className="mt-3 max-w-3xl space-y-3 leading-relaxed text-muted">
+                  {cs.aside.paragraphs.map((p) => (
+                    <p key={p}>{p}</p>
+                  ))}
+                </div>
+              </aside>
+            )}
+          </section>
+        )}
 
-        <Block id="appris" title="Ce que j’ai appris">
-          <CaseSectionView section={cs.learnings} />
-        </Block>
+        {done(cs.learnings) && (
+          <Block id="appris" title="Ce que j’ai appris">
+            <CaseSectionView section={cs.learnings} />
+          </Block>
+        )}
 
         <Block id="stack" title="Stack">
           <ul className="flex flex-wrap gap-2">

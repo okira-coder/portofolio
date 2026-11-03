@@ -57,6 +57,9 @@ export function Projects() {
       <Band tone="paper">
         <SiteFeature slug="cashup" />
       </Band>
+      <Band tone="dark">
+        <SiteFeature slug="terolia" reverse />
+      </Band>
     </section>
   );
 }

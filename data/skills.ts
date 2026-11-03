@@ -12,7 +12,7 @@ export const skillGroups = [
   },
   {
     name: "Engineering",
-    items: ["Python", "Node.js", "SQL", "REST APIs & webhooks", "PostgreSQL", "Docker", "Conteneurisation", "CI/CD", "Authentification", "Power BI"],
+    items: ["Python", "FastAPI", "Node.js", "React", "SQL", "REST APIs & webhooks", "PostgreSQL", "pgvector", "Scraping", "Docker", "Conteneurisation", "CI/CD", "Authentification", "Power BI"],
   },
   {
     name: "Intégrations & plateformes",

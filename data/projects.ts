@@ -291,8 +291,8 @@ export const projects: Project[] = [
           { value: "2", label: "publics servis : clients et équipes internes" },
         ],
       },
-      failures: todo("À compléter : difficultés rencontrées pendant l’intégration ou après la mise en ligne."),
-      changes: todo("À compléter : ajustements faits après les premiers retours utilisateurs."),
+      failures: todo(""),
+      changes: todo(""),
       learnings: {
         kind: "list",
         items: [
@@ -459,12 +459,11 @@ export const projects: Project[] = [
         kind: "text",
         paragraphs: ["Des pratiquants de CrossFit : plus de 3 000 utilisateurs à ce jour."],
       },
-      constraints: todo("À compléter : contraintes du client (délais, budget, plateformes visées)."),
-      approach: todo("À compléter : déroulé de la mission, de la conception au déploiement."),
+      constraints: todo(""),
+      approach: todo(""),
       architecture: {
         kind: "pipeline",
         steps: ["Application", "Backend Node.js", "Hébergement Railway"],
-        note: "Le reste de la stack est à préciser.",
       },
       personal: {
         kind: "list",
@@ -484,9 +483,9 @@ export const projects: Project[] = [
           { value: "Production", label: "produit toujours accessible" },
         ],
       },
-      failures: todo("À compléter : principale difficulté technique ou produit rencontrée."),
-      changes: todo("À compléter : ce qui a été ajusté en cours de mission."),
-      learnings: todo("À compléter : enseignements de la mission."),
+      failures: todo(""),
+      changes: todo(""),
+      learnings: todo(""),
       images: [
         {
           src: "/images/projects/monsieurwod/wod.png",
@@ -516,7 +515,7 @@ export const projects: Project[] = [
     result:
       "Application mobile iPhone et site web en ligne sur onbump.net : plus d’une centaine d’événements recensés et plus de 2 500 visiteurs web.",
     role: "Conception et développement de l’application mobile et du site web",
-    stack: ["Application mobile", "Web", "iOS"],
+    stack: ["Next.js", "Supabase", "Application iPhone"],
     status: "Production",
     statusDetail: "En ligne : iPhone et web",
     link: { label: "Voir onbump.net", href: "https://onbump.net" },
@@ -543,13 +542,9 @@ export const projects: Project[] = [
           "Les organisateurs, qui veulent faire découvrir leur événement.",
         ],
       },
-      constraints: todo("À compléter : contraintes techniques et produit (plateformes, données, délais)."),
-      approach: todo("À compléter : déroulé du projet, de la conception à la mise en ligne."),
-      architecture: {
-        kind: "pipeline",
-        steps: ["Application mobile", "Site web", "Événements", "Rencontres", "Relances"],
-        note: "Le détail de la stack technique est à préciser.",
-      },
+      constraints: todo(""),
+      approach: todo(""),
+      architecture: todo(""),
       personal: {
         kind: "list",
         items: [
@@ -566,9 +561,9 @@ export const projects: Project[] = [
           { value: "iOS + web", label: "application iPhone et site web" },
         ],
       },
-      failures: todo("À compléter : principale difficulté rencontrée."),
-      changes: todo("À compléter : ce qui a été ajusté après les premiers retours."),
-      learnings: todo("À compléter : enseignements du projet."),
+      failures: todo(""),
+      changes: todo(""),
+      learnings: todo(""),
       images: [
         {
           src: "/images/projects/onbump/home.png",
@@ -605,7 +600,7 @@ export const projects: Project[] = [
     result:
       "Un catalogue de 20 workflows en ligne sur opsbyfranck.com, par métier : SEO & Marketing, Vente, RH, Management & Ops.",
     role: "Conception, création des workflows et développement du site",
-    stack: ["Claude", "Artifacts", "Slack", "Notion", "CRM"],
+    stack: ["Next.js", "Supabase", "Claude (Artifacts)"],
     status: "Production",
     statusDetail: "En ligne",
     link: { label: "Voir opsbyfranck.com", href: "https://opsbyfranck.com" },
@@ -628,7 +623,7 @@ export const projects: Project[] = [
         kind: "list",
         items: ["Des professionnels et équipes B2B : SEO & marketing, vente, RH, management et opérations."],
       },
-      constraints: todo("À compléter : contraintes (qualité des sorties, confidentialité, adoption)."),
+      constraints: todo(""),
       approach: {
         kind: "pipeline",
         steps: ["Identifier la douleur", "Vivre le résultat", "Ajuster au contexte", "Industrialiser"],
@@ -637,7 +632,6 @@ export const projects: Project[] = [
       architecture: {
         kind: "pipeline",
         steps: ["Catalogue de workflows", "Prompt autonome", "Artifact Claude", "Outils internes"],
-        note: "Le détail de la stack technique du site est à préciser.",
       },
       personal: {
         kind: "list",
@@ -656,9 +650,9 @@ export const projects: Project[] = [
           { value: "< 2 min", label: "pour obtenir un résultat concret" },
         ],
       },
-      failures: todo("À compléter : principale difficulté rencontrée."),
-      changes: todo("À compléter : ce qui a été ajusté après les premiers retours."),
-      learnings: todo("À compléter : enseignements du projet."),
+      failures: todo(""),
+      changes: todo(""),
+      learnings: todo(""),
       images: [
         {
           src: "/images/projects/opsbyfranck/home.png",
@@ -688,7 +682,7 @@ export const projects: Project[] = [
     result:
       "Un site de rachat de smartphones avec estimation en ligne, adossé à un CRM de suivi des leads et à des règles de calcul déterministes pour chiffrer les iPhone.",
     role: "Mise en place du CRM de suivi des leads et des règles de calcul de prix",
-    stack: ["CRM", "Règles de calcul déterministes", "Web"],
+    stack: ["Vite", "CRM de suivi des leads", "Règles de calcul déterministes"],
     status: "Production",
     statusDetail: "En ligne",
     link: { label: "Voir cashupstore.fr", href: "https://cashupstore.fr/" },
@@ -699,7 +693,7 @@ export const projects: Project[] = [
       alt: "Accueil du site de rachat de smartphones TECH-UP Reprise",
     },
     caseStudy: {
-      period: "À préciser",
+      period: "2025 – 2026",
       role: "Mise en place du CRM de suivi des leads et des règles de calcul de prix",
       problem: {
         kind: "text",
@@ -722,11 +716,14 @@ export const projects: Project[] = [
           "Des appareils parfois cassés, donc des états à décrire simplement.",
         ],
       },
-      approach: todo("À compléter : déroulé de la mission, de la conception à la mise en ligne."),
+      approach: todo(""),
       architecture: {
-        kind: "pipeline",
-        steps: ["Formulaire d’estimation", "Règles de calcul", "Prix", "CRM", "Suivi du lead"],
-        note: "Le détail de la stack technique est à préciser.",
+        kind: "list",
+        items: [
+          "Frontend du site : Vite.",
+          "Estimation du prix d’un iPhone : règles de calcul déterministes.",
+          "Suivi des demandes : CRM dédié aux leads.",
+        ],
       },
       personal: {
         kind: "list",
@@ -744,8 +741,8 @@ export const projects: Project[] = [
           { value: "2 min", label: "pour obtenir une estimation" },
         ],
       },
-      failures: todo("À compléter : principale difficulté rencontrée."),
-      changes: todo("À compléter : ce qui a été ajusté après les premiers retours."),
+      failures: todo(""),
+      changes: todo(""),
       learnings: {
         kind: "list",
         items: [
@@ -766,6 +763,104 @@ export const projects: Project[] = [
           height: 900,
           alt: "Parcours d’estimation du prix d’un smartphone",
           caption: "Parcours d’estimation du prix",
+        },
+      ],
+    },
+  },
+  {
+    slug: "terolia",
+    number: "08",
+    name: "Terolia",
+    category: "Produit B2B · GEO · RAG · Freelance",
+    title: "Devenir la marque que les IA recommandent",
+    problem:
+      "Les prospects B2B demandent de plus en plus à ChatGPT, Claude, Perplexity ou Gemini quel prestataire choisir. Terolia mesure si une marque est citée dans ces réponses et dit quoi faire pour l’être.",
+    result:
+      "Un produit en ligne : audit de visibilité sur 4 moteurs IA, comparaison aux concurrents et plan d’action priorisé. Utilisé par environ 5 professionnels, dont Castalie.",
+    role: "Conception et développement de A à Z jusqu’au déploiement",
+    stack: ["React", "Python", "FastAPI", "Scraping", "RAG", "Supabase", "PostgreSQL", "pgvector", "Railway"],
+    status: "Production",
+    statusDetail: "En ligne",
+    link: { label: "Voir terolia.com", href: "https://terolia.com" },
+    cover: {
+      src: "/images/projects/terolia/home.png",
+      width: 1440,
+      height: 900,
+      alt: "Accueil de terolia.com",
+    },
+    caseStudy: {
+      period: "2025 – 2026",
+      role: "Freelance — conception et développement de bout en bout",
+      problem: {
+        kind: "text",
+        paragraphs: [
+          "Quand un décideur demande à une IA quel prestataire choisir, les marques absentes de la réponse n’existent pas pour lui. C’est le GEO (Generative Engine Optimization), le pendant du SEO pour les moteurs de réponse IA.",
+          "Terolia pose aux IA les mêmes questions que les prospects, mesure si la marque est recommandée et à quelle fréquence, puis propose les actions à mener, classées par impact.",
+        ],
+      },
+      users: {
+        kind: "text",
+        paragraphs: ["Des professionnels et équipes marketing B2B : environ 5 utilisateurs, dont Castalie."],
+      },
+      constraints: {
+        kind: "list",
+        items: [
+          "Des réponses d’IA variables d’un test à l’autre : chaque question est posée 3 fois pour fiabiliser la mesure.",
+          "Quatre moteurs à mesurer en parallèle : ChatGPT, Claude, Perplexity et Gemini.",
+          "Hébergement dans l’Union européenne et conformité RGPD, mis en avant sur le site.",
+        ],
+      },
+      approach: todo(""),
+      architecture: {
+        kind: "list",
+        intro: "Stack technique :",
+        items: [
+          "Frontend : React.",
+          "Backend : Python avec FastAPI.",
+          "Collecte de données : scraping.",
+          "IA : RAG (retrieval-augmented generation).",
+          "Base de données : Supabase, PostgreSQL avec l’extension pgvector.",
+          "Hébergement : Railway, avec des tâches planifiées.",
+        ],
+      },
+      personal: {
+        kind: "list",
+        items: [
+          "Conception du produit et développement complet, du frontend au backend.",
+          "Mesure de la visibilité d’une marque sur 4 moteurs IA, avec comparaison à chaque concurrent.",
+          "Tableau de bord : taux de mention, couverture des moteurs, part de voix, concurrents.",
+          "Plan d’action priorisé et studio de contenu.",
+          "Audit technique, données structurées et fichier llms.txt.",
+          "Copilote IA intégré pour interpréter les résultats.",
+          "Déploiement et tâches planifiées sur Railway.",
+        ],
+      },
+      results: {
+        kind: "metrics",
+        note: "La démo publique utilise des données d’exemple (marque fictive Facturio).",
+        metrics: [
+          { value: "4", label: "moteurs IA mesurés : ChatGPT, Claude, Perplexity, Gemini" },
+          { value: "3×", label: "tests par question pour fiabiliser la mesure" },
+          { value: "≈ 5", label: "professionnels utilisateurs, dont Castalie" },
+        ],
+      },
+      failures: todo(""),
+      changes: todo(""),
+      learnings: todo(""),
+      images: [
+        {
+          src: "/images/projects/terolia/home.png",
+          width: 1440,
+          height: 900,
+          alt: "Accueil de terolia.com",
+          caption: "Accueil : « Soyez la marque que les IA recommandent »",
+        },
+        {
+          src: "/images/projects/terolia/demo.png",
+          width: 1440,
+          height: 900,
+          alt: "Tableau de bord de la démo Terolia",
+          caption: "Tableau de bord de la démo (données d’exemple) : taux de mention, couverture des 4 moteurs, actions prioritaires et concurrents",
         },
       ],
     },

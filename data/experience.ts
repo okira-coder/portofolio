@@ -73,15 +73,23 @@ export const experiences: Experience[] = [
     groups: [
       {
         title: "MonsieurWod — plateforme sociale sportive",
-        text: "Conception et développement de bout en bout : WOD chronométrés, feed social, classements, badges, partage de photos et vidéos. Plus de 3 000 utilisateurs.",
+        text: "Conception et développement de bout en bout (Node.js, hébergé sur Railway) : WOD chronométrés, feed social, following et amis, statistiques, classements, badges, partage de photos et vidéos. Plus de 3 000 utilisateurs, produit toujours en ligne.",
       },
       {
-        title: "Terolia — produit B2B",
-        text: "Produit réalisé de A à Z jusqu’au déploiement (React / Vite, hébergement Railway, tâches planifiées), utilisé par environ 5 professionnels, dont Castalie.",
+        title: "Terolia — GEO, visibilité dans les réponses des IA",
+        text: "Produit B2B réalisé de A à Z jusqu’au déploiement. Il mesure si une marque est citée par ChatGPT, Claude, Perplexity et Gemini, la compare à ses concurrents et propose un plan d’action priorisé. Frontend React, backend Python FastAPI, scraping, RAG, base Supabase (PostgreSQL + pgvector), hébergement Railway avec tâches planifiées. Utilisé par environ 5 professionnels, dont Castalie.",
+      },
+      {
+        title: "TECH-UP Reprise — retail, rachat de smartphones",
+        text: "Mise en place d’un CRM pour le suivi des leads et de règles de calcul déterministes pour estimer le prix d’un iPhone, en ligne sur cashupstore.fr.",
       },
     ],
-    tools: ["Node.js", "React", "Vite", "Railway"],
-    links: [{ label: "Étude de cas MonsieurWod", href: "/projects/monsieurwod" }],
+    tools: ["Node.js", "React", "Python", "FastAPI", "Supabase", "PostgreSQL", "pgvector", "RAG", "Scraping", "Railway"],
+    links: [
+      { label: "Étude de cas MonsieurWod", href: "/projects/monsieurwod" },
+      { label: "Étude de cas Terolia", href: "/projects/terolia" },
+      { label: "Étude de cas TECH-UP Reprise", href: "/projects/cashup" },
+    ],
   },
   {
     company: "Recrutons Ensemble",
