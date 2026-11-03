@@ -46,7 +46,7 @@ export function Media({
     <div className="relative w-full overflow-hidden bg-panel" style={{ aspectRatio: `${slot.width} / ${slot.height}` }}>
       {exists ? (
         <Image
-          src={slot.src}
+          src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${slot.src}`}
           alt={slot.alt}
           fill
           sizes={sizes}
